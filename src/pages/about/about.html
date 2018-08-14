@@ -35,18 +35,15 @@
         </ion-card-title>
         <div *ngIf="leaders">
           <ion-list>
-            <ion-item *ngFor="let leader of leaders">
+            <ion-item *ngFor="let leader of leaders" text-wrap>
               <ion-avatar item-start>
                 <img src="{{BaseURL + leader.image}}">
               </ion-avatar>
-              <div item-content>
-                <h2>{{leader.name}}</h2>
-                <h3>{{leader.designation}}</h3>
-                <p>
-                  {{leader.description}}
-                </p>
-                <br>
-              </div>
+              <h2>{{leader.name}}</h2>
+              <h3>{{leader.designation}}</h3>
+              <p>
+                {{leader.description}}
+              </p>
             </ion-item>
           </ion-list>
         </div>
