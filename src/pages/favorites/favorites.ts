@@ -30,7 +30,9 @@ export class FavoritesPage implements OnInit {
   }
 
   ngOnInit() {
-    this.favoriteservice.getFavorites().subscribe(favorites => this.favorites = favorites, errmess => this.errMess = <any>errmess);
+    this.favoriteservice.getStorage().then(()=>{
+      this.favoriteservice.getFavorites().subscribe(favorites => this.favorites = favorites, errmess => this.errMess = <any>errmess);
+    });
   }
 
   deleteFavorite(item: ItemSliding, id: number) {
